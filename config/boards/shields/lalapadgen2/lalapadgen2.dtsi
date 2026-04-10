@@ -168,7 +168,8 @@
             layers = <2>,<3>;
             input-processors =  <&trackpad_key_behaviors_R>,
                                 <&zip_xy_scaler 1 15>,
-                                <&zip_scroll_scaler 1 40>,
+                                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)>,
+                                <&zip_scroll_scaler 1 120>,
                                 <&zip_dynamic_xy_scaler>,
                                 <&zip_dynamic_scroll_scaler>;
         };
@@ -187,7 +188,8 @@
             layers = <2>,<3>;
             input-processors =  <&trackpad_key_behaviors_L>,
                                 <&zip_xy_scaler 1 15>,
-                                <&zip_scroll_scaler 1 40>,
+                                <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)>,
+                                <&zip_scroll_scaler 1 120>,
                                 <&zip_dynamic_xy_scaler>,
                                 <&zip_dynamic_scroll_scaler>;
         };
