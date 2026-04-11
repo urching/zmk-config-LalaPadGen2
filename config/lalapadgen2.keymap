@@ -61,25 +61,25 @@
     keymap {
         compatible = "zmk,keymap";
 
-        Windows_LAYER {
+        WINDOWS_LAYER {
             display-name = "Default";
             bindings = <
 &kp Q              &kp W             &kp E         &kp R        &kp T                                        &kp Y          &kp U        &kp I        &kp O        &kp P
 &kp A              &kp S             &kp D         &kp F        &kp G                                        &kp H          &kp J        &kp K        &kp L        &kp MINUS
 &mt2 LEFT_SHIFT Z  &kp X             &kp C         &kp V        &kp B                                        &kp N          &kp M        &kp COMMA    &kp PERIOD   &mt RIGHT_SHIFT SLASH
-&kp LCTRL          &kp LWIN          &kp LEFT_ALT  &lt 3 SPACE  &kp TAB    &kp LANGUAGE_2  &lt 4 LANGUAGE_1  &kp BACKSPACE  &lt 2 ENTER  &mkp MB1     &mkp MB2     &kp DELETE
+&kp LCTRL          &kp LWIN          &kp LEFT_ALT  &lt 3 SPACE  &lt 4 TAB  &kp LANGUAGE_2  &lt 5 LANGUAGE_1  &kp BACKSPACE  &lt 2 ENTER  &mkp MB1     &mkp MB2     &kp DELETE
                    &kp LEFT_CONTROL  &kp RIGHT     &kp DOWN     &kp LEFT   &kp UP          &kp UP            &kp LEFT       &kp DOWN     &kp RIGHT    &to 1
 &mkp LCLK          &mkp RCLK         &mkp MCLK                                                                                           &mkp LCLK    &mkp RCLK    &mkp MCLK
 &mkp MB4           &mkp MB5          &kp LG(TAB)   &kp LG(TAB)  &kp LCTRL                                    &mkp MB4       &mkp MB5     &kp LG(TAB)  &kp LG(TAB)  &kp LCTRL
             >;
         };
 
-        MAC_layer {
+        MAC_LAYER {
             bindings = <
 &kp Q              &kp W         &kp E             &kp R             &kp T                                        &kp Y          &kp U        &kp I             &kp O             &kp P
 &kp A              &kp S         &kp D             &kp F             &kp G                                        &kp H          &kp J        &kp K             &kp L             &kp MINUS
 &mt2 LEFT_SHIFT Z  &kp X         &kp C             &kp V             &kp B                                        &kp N          &kp M        &kp COMMA         &kp PERIOD        &mt RIGHT_SHIFT SLASH
-&kp LCTRL          &kp LEFT_ALT  &kp LEFT_GUI      &lt 3 SPACE       &kp TAB    &kp LANGUAGE_2  &lt 4 LANGUAGE_1  &kp BACKSPACE  &lt 2 ENTER  &mkp MB1          &mkp MB2          &kp DELETE
+&kp LCTRL          &kp LEFT_ALT  &kp LEFT_GUI      &lt 3 SPACE       &lt 4 TAB  &kp LANGUAGE_2  &lt 5 LANGUAGE_1  &kp BACKSPACE  &lt 2 ENTER  &mkp MB1          &mkp MB2          &kp DELETE
                    &kp LEFT_GUI  &kp RIGHT         &kp DOWN          &kp LEFT   &kp UP          &kp UP            &kp LEFT       &kp DOWN     &kp RIGHT         &to 0
 &mkp LCLK          &mkp RCLK     &mkp MCLK                                                                                                    &mkp LCLK         &mkp RCLK         &mkp MCLK
 &mkp MB4           &mkp MB5      &kp LC(UP_ARROW)  &kp LC(UP_ARROW)  &kp LCTRL                                    &mkp MB4       &mkp MB5     &kp LC(UP_ARROW)  &kp LC(UP_ARROW)  &kp LCTRL
@@ -88,7 +88,7 @@
             label = "mac_layer";
         };
 
-        SYMBOLS {
+        SYMBOLS_LAYER {
             display-name = "secondary_layer";
             bindings = <
 &kp ESCAPE        &kp EQUAL          &trans    &trans      &trans                       &kp GRAVE         &kp DOUBLE_QUOTES  &kp TILDE             &kp BACKSLASH          &kp AT_SIGN
@@ -101,7 +101,7 @@
             >;
         };
 
-        NUM-FUNC {
+        NUM-FUNC_LAYER {
             display-name = "tertiary_layer";
             bindings = <
 &kp ESCAPE    &kp EQUAL     &kp PLUS      &kp MINUS     &kp ASTERISK                  &kp SLASH     &kp COLON     &kp COMMA     &kp PERIOD    &kp AT_SIGN
@@ -111,6 +111,18 @@
               &trans        &trans        &trans        &trans        &trans  &trans  &trans        &trans        &trans        &trans
 &trans        &trans        &trans                                                                                &trans        &trans        &trans
 &trans        &trans        &trans        &trans        &trans                        &trans        &trans        &trans        &trans        &trans
+            >;
+        };
+
+        CURSOR_LAYER {
+            bindings = <
+&kp ESCAPE  &trans  &trans  &trans  &trans                  &trans    &kp PAGE_UP    &kp UP_ARROW    &trans           &trans
+&trans      &trans  &trans  &trans  &trans                  &kp HOME  &kp LEFT       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&trans      &trans  &trans  &trans  &trans                  &trans    &kp PAGE_DOWN  &trans          &trans           &trans
+&trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans          &trans           &trans
+            &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans         &trans          &trans
+&trans      &trans  &trans                                                           &trans          &trans           &trans
+&trans      &trans  &trans  &trans  &trans                  &trans    &trans         &trans          &trans           &trans
             >;
         };
 
@@ -133,7 +145,7 @@
 
         Cond_Syslayer {
             if-layers = <2 3>;
-            then-layer = <4>;
+            then-layer = <5>;
         };
     };
 };
